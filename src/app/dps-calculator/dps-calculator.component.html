@@ -1,0 +1,40 @@
+<label for="strengthLevel">Strength level</label>
+<input type="number" name="strengthLevel"
+[(ngModel)]="strengthLevel">
+
+<br>
+
+<label for="weapon">Weapon</label>
+<select [ngModel]="meleeWeapons" (ngModelChange)="onChangeWeapon($event)" name="weapon">
+    <option [ngValue]="i" *ngFor="let i of meleeWeapons">{{i.name}}</option>
+</select>
+
+<br>
+
+<input type="checkbox" [(ngModel)]="usingPotions" (change)="onChangeUsingPotions()" name="potionCheckbox">
+<label for="potionCheckbox">Super strength potion</label>
+
+<br>
+
+<label for="attackStyle">Attack style</label>
+<select [ngModel]="meleeWeapons" (ngModelChange)="onChangeAttackStyle($event)" name="attackstyle">
+    <option [ngValue]="i" *ngFor="let i of meleeWeapons[i].attackStyles">{{i.xp}}</option>
+</select>
+
+
+<button (click)="calculateRate()">Calculate</button>
+
+<p>Weapon strength bonus: {{weaponStrengthBonus}}</p>
+<p>Hidden strength bonus from attack style: {{hiddenStrengthBonus}}</p>
+<p>Hidden attack bonus from attack style: {{hiddenAttackBonus}}</p>
+<p>Strength level: {{strengthLevel}}</p>
+<p>Using super strength potions? {{usingPotions}}</p>
+<p>Average potion level boost: {{potionLevelBoost}}</p>
+<p>Effective strength level: {{effectiveStrengthLevel}}</p>
+<p>Max hit: {{maxHit}}</p>
+
+
+
+
+
+
