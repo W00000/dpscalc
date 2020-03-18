@@ -10,4 +10,5 @@ export class AttackStyle{
         this.strengthBonus = strengthBonus;
         this.attackBonus = attackBonus;
     }
+  
 }
